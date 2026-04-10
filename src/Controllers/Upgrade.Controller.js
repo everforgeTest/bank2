@@ -8,7 +8,12 @@ function readEnvMaintainer() {
     if (!expected.match(/^[0-9a-f]+$/)) throw { code: ContractResponseTypes.INTERNAL_SERVER_ERROR, message: "MAINTAINER_PUBKEY must be hex." };
     return expected;
 }
-
+function readEnvMaintainer() {
+    const expected = (process.env.MAINTAINER_PUBKEY || "").trim().toLowerCase();
+    if (!expected) throw { code: ContractResponseTypes.INTERNAL_SERVER_ERROR, message: "MAINTAINER_PUBKEY is not set." };
+    if (!expected.match(/^[0-9a-f]+$/)) throw { code: ContractResponseTypes.INTERNAL_SERVER_ERROR, message: "MAINTAINER_PUBKEY must be hex." };
+    return expected;
+}
 function isMaintainer(userPubKeyHex) {
     const expected = readEnvMaintainer();
     if (!userPubKeyHex) return false;
