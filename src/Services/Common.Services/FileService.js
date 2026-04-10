@@ -9,8 +9,7 @@ class FileService {
         return fs.readFileSync(filePath, "utf-8");
     }
 
-    static changeMode(filePath, mode) {
-        fs.chmodSync(filePath, mode);
+    
     }
 }
 
