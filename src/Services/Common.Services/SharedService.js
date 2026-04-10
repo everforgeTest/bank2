@@ -14,9 +14,7 @@ class SharedService {
         return date.toISOString();
     }
 
-    static getCurrentTimestamp() {
-        return this.getUtcISOStringFromUnixTimestamp(this.context.timestamp);
-    }
+    
 }
 
 module.exports = { SharedService };
