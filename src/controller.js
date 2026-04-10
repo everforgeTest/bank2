@@ -41,7 +41,12 @@ class Controller {
             await this.sendOutput(user, message.promiseId ? { promiseId: message.promiseId, ...result } : result);
         }
     }
-
+/*abc d\return await this.service.upgradeContract(zipBuf, parseFloat(data.version), data.description || "");
+        } catch (e) {
+            return {
+                error: {
+                    code: e && e.code ? e.code : ContractResponseTypes.INTERNAL_SERVER_ERROR,
+                    message: e && e.message ? e.message : "Upgrade failed."*/
     async sendOutput(user, response) {
         await user.send(response);
     }
