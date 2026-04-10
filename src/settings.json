@@ -1,0 +1,8 @@
+{
+  "settings": {
+    "postExecutionScriptName": "./post_exec.sh",
+    "dbPath": "banking.db",
+    "dbScriptsFolderPath": "./dbScripts",
+    "newContractZipFileName": "./newContractData.zip"
+  }
+}
