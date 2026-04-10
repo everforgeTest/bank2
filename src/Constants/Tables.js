@@ -3,6 +3,6 @@ const Tables = {
     CONTRACTVERSION: "ContractVersion",
     ACCOUNTS: "Accounts",
     TRANSACTIONS: "Transactions"
-};
+};//jhjkhjh
 
 module.exports = { Tables };
