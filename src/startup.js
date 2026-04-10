@@ -46,22 +46,7 @@ const contract = async ctx => {
         dbContext.close();
     }
 
-    const controller = new Controller();
-
-    for (const user of ctx.users.list()) {
-        for (const input of user.inputs) {
-            const buf = await ctx.users.read(input);
-            let message = null;
-            try {
-                message = JSON.parse(buf);
-            } catch (e) {
-                try {
-                    message = bson.deserialize(buf);
-                } catch (e2) {
-                    await user.send({ error: { code: 400, message: "Invalid message format." } });
-                    continue;
-                }
-            }
+    
             if (message && message.Data && !message.data) message.data = message.Data;
             await controller.handleRequest(user, message, isReadOnly);
         }
