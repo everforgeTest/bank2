@@ -7,13 +7,13 @@ class Controller {
         this.bankController = null;
         this.upgradeController = null;
     }
-
+//abd
     async handleRequest(user, message, isReadOnly) {
         if (!message || typeof message !== "object") {
             await user.send({ error: { code: 400, message: "Message must be an object." } });
             return;
         }
-
+//abd
         const service = message.Service || message.service;
 
         this.bankController = new BankController(message);
